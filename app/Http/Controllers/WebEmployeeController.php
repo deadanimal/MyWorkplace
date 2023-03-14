@@ -9,6 +9,7 @@ class WebEmployeeController extends Controller
 
     public function show_dashboard(Request $request) {
         $user = $request->user();
+        return view('dashboard');
     }
 
     public function show_employees(Request $request) {}
