@@ -26,14 +26,14 @@
                 <div class="mb-3 text-start">
                     <label class="form-label" for="email">Email address</label>
                     <div class="form-icon-container">
-                        <input class="form-control form-icon-input" id="email" type="email"
+                        <input class="form-control form-icon-input" id="email" type="email" name="email"
                             placeholder="name@example.com" /><span class="fas fa-user text-900 fs--1 form-icon"></span>
                     </div>
                 </div>
                 <div class="mb-3 text-start">
                     <label class="form-label" for="password">Password</label>
                     <div class="form-icon-container">
-                        <input class="form-control form-icon-input" id="password" type="password"
+                        <input class="form-control form-icon-input" id="password" type="password" name="password"
                             placeholder="Password" /><span class="fas fa-key text-900 fs--1 form-icon"></span>
                     </div>
                 </div>
