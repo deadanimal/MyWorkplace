@@ -87,7 +87,7 @@
                       <ul class="nav collapse parent show" data-bs-parent="#navbarVerticalCollapse" id="home">
                         <li class="collapsed-nav-item-title d-none">Home
                         </li>
-                        <li class="nav-item"><a class="nav-link active" href="index.html" data-bs-toggle="" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link active" href="/" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center"><span class="nav-link-text">E commerce</span>
                             </div>
                           </a>
@@ -1505,7 +1505,7 @@
             <div class="navbar-logo">
 
               <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-              <a class="navbar-brand me-1 me-sm-3" href="index.html">
+              <a class="navbar-brand me-1 me-sm-3" href="/">
                 <div class="d-flex align-items-center">
                   <div class="d-flex align-items-center"><img src="/assets/img/icons/logo.png" alt="phoenix" width="27" />
                     <p class="logo-text ms-2 d-none d-sm-block">phoenix</p>
@@ -1514,14 +1514,7 @@
               </a>
             </div>
             <div class="search-box navbar-top-search-box d-none d-lg-block" data-list='{"valueNames":["title"]}' style="width:25rem;">
-              <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-                <input class="form-control search-input fuzzy-search rounded-pill form-control-sm" type="search" placeholder="Search..." aria-label="Search" />
-                <span class="fas fa-search search-box-icon"></span>
-
-              </form>
-              <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none" data-bs-dismiss="search">
-                <button class="btn btn-link btn-close-falcon p-0" aria-label="Close"></button>
-              </div>
+            
               <div class="dropdown-menu border border-300 font-base start-0 py-0 overflow-hidden w-100">
                 <div class="scrollbar-overlay" style="max-height: 30rem;">
                   <div class="list pb-3">
@@ -1855,26 +1848,21 @@
                         </div>
                         <h6 class="mt-2 text-black">Jerry Seinfield</h6>
                       </div>
-                      <div class="mb-3 mx-3">
-                        <input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" />
-                      </div>
                     </div>
                     <div class="overflow-auto scrollbar" style="height: 10rem;">
                       <ul class="nav d-flex flex-column mb-2 pb-1">
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="user"></span><span>Profile</span></a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-900" data-feather="pie-chart"></span>Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="lock"></span>Posts &amp; Activity</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="settings"></span>Settings &amp; Privacy </a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="help-circle"></span>Help Center</a></li>
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="globe"></span>Language</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="/profile"> <span class="me-2 text-900" data-feather="user"></span><span>Profile</span></a></li>
+                        {{-- <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-900" data-feather="pie-chart"></span>Dashboard</a></li> --}}
+                        <li class="nav-item"><a class="nav-link px-3" href="/profile/activities"> <span class="me-2 text-900" data-feather="lock"></span>Activity</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="/profile/settings"> <span class="me-2 text-900" data-feather="settings"></span>Settings</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="/helps"> <span class="me-2 text-900" data-feather="help-circle"></span>Help Center</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="globe"></span>Language</a></li> --}}
                       </ul>
                     </div>
                     <div class="card-footer p-0 border-top">
-                      <ul class="nav d-flex flex-column my-3">
-                        <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="user-plus"></span>Add another account</a></li>
-                      </ul>
-                      <hr />
-                      <div class="px-3"> 
+                     
+                      
+                      <div class="pt-3 px-3"> 
                         <form action="/logout" method="POST">
                             @csrf
                             <button class="btn btn-phoenix-secondary d-flex flex-center w-100" type="submit">
@@ -1883,7 +1871,10 @@
                         </form>                        
                    
                         </div>
-                      <div class="my-2 text-center fw-bold fs--2 text-600"><a class="text-600 me-1" href="#!">Privacy policy</a>&bull;<a class="text-600 mx-1" href="#!">Terms</a>&bull;<a class="text-600 ms-1" href="#!">Cookies</a></div>
+                      <div class="my-2 text-center fw-bold fs--2 text-600">
+                        <a class="text-600 me-1" href="/privacy">Privacy</a>&bull;
+                        <a class="text-600 mx-1" href="/terms">Terms</a>                        
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -1896,14 +1887,7 @@
             <div class="modal-content mt-15 rounded-pill">
               <div class="modal-body p-0">
                 <div class="search-box navbar-top-search-box" data-list='{"valueNames":["title"]}' style="width: auto;">
-                  <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-                    <input class="form-control search-input fuzzy-search rounded-pill form-control-lg" type="search" placeholder="Search..." aria-label="Search" />
-                    <span class="fas fa-search search-box-icon"></span>
-
-                  </form>
-                  <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none" data-bs-dismiss="search">
-                    <button class="btn btn-link btn-close-falcon p-0" aria-label="Close"></button>
-                  </div>
+           
                   <div class="dropdown-menu border border-300 font-base start-0 py-0 overflow-hidden w-100">
                     <div class="scrollbar-overlay" style="max-height: 30rem;">
                       <div class="list pb-3">
