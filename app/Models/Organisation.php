@@ -16,9 +16,9 @@ class Organisation extends Model
         'user_id',
     ];  
 
-    public function users()
+    public function employees()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Employee::class);
     }      
 
     public function creator()

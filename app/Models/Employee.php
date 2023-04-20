@@ -7,28 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 
-class Leave extends Model
+class Employee extends Model
 {
     use HasFactory;
     use LogsActivity;
 
     protected $fillable = [
-        'proposed_date',
-        'leave_type',
+        'organisation_id',
+        'user_id',
+    ];      
 
-        'attachment',
-        'remarks',
-        'status',
-        
-        'employee_id',
-    ];  
-
-    public function employee()
+    public function user()
     {
-        return $this->belongsTo(Employee::class);
-    }     
-           
-
+        return $this->belongsTo(User::class);
+    }    
+    
+    public function organisation()
+    {
+        return $this->belongsTo(User::class);
+    }    
+    
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
